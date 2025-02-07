@@ -107,9 +107,6 @@ public class PointGeneratorUtil extends ReceiptLogger {
         String[] convertedTime = receipt.getPurchaseTime().split(":");
         LocalTime purchaseTime = LocalTime.of(Integer.parseInt(convertedTime[0]), Integer.parseInt(convertedTime[1]));
 
-//        if (purchaseTime.isAfter(twoPm) && purchaseTime.isBefore(fourPm)) {
-//            calculatedPoints = calculatedPoints + 10;
-//        }
         calculatedPoints = purchaseTime.isAfter(twoPm) && purchaseTime.isBefore(fourPm) ? calculatedPoints + 10 : calculatedPoints;
     }
 
